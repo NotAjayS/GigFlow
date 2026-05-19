@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const API = import.meta.env.VITE_API_URL;
+
 export default function Dashboard() {
   const [leads, setLeads] = useState<any[]>([]);
   const [search, setSearch] = useState("");
@@ -15,10 +17,7 @@ export default function Dashboard() {
   // FETCH LEADS
   const fetchLeads = async () => {
     try {
-      const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/leads`
-      );
-
+      const res = await axios.get(`${API}/api/leads`);
       setLeads(res.data.leads);
     } catch (err) {
       console.log(err);
@@ -40,10 +39,7 @@ export default function Dashboard() {
   // CREATE LEAD
   const createLead = async () => {
     try {
-      await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/leads/create`,
-        formData
-      );
+      await axios.post(`${API}/api/leads/create`, formData);
 
       fetchLeads();
 
@@ -61,10 +57,7 @@ export default function Dashboard() {
   // DELETE LEAD
   const deleteLead = async (id: string) => {
     try {
-      await axios.delete(
-        `${import.meta.env.VITE_API_URL}/api/leads/${id}`
-      );
-
+      await axios.delete(`${API}/api/leads/${id}`);
       fetchLeads();
     } catch (err) {
       console.log(err);
@@ -81,13 +74,10 @@ export default function Dashboard() {
     if (!newStatus) return;
 
     try {
-      await axios.put(
-        `${import.meta.env.VITE_API_URL}/api/leads/${lead._id}`,
-        {
-          ...lead,
-          status: newStatus,
-        }
-      );
+      await axios.put(`${API}/api/leads/${lead._id}`, {
+        ...lead,
+        status: newStatus,
+      });
 
       fetchLeads();
     } catch (err) {
