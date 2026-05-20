@@ -11,6 +11,26 @@ It allows users to:
 
 ---
 
+## 📡 API Endpoints
+
+### Authentication
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /api/auth/register | Register User |
+| POST | /api/auth/login | Login User |
+
+### Leads
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | /api/leads | Get All Leads |
+| POST | /api/leads/create | Create Lead |
+| PUT | /api/leads/:id | Update Lead |
+| DELETE | /api/leads/:id | Delete Lead |
+
+---
+
 ## 🌐 Live Demo
 
 Frontend (Vercel):
@@ -18,6 +38,8 @@ https://gig-flow-alpha-silk.vercel.app
 
 Backend (Render):
 https://gigflow-backend-b3gk.onrender.com
+
+
 User Email: sathish@gmail.com
 Password: 12345
 
