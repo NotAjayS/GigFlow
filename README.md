@@ -18,6 +18,8 @@ https://gig-flow-alpha-silk.vercel.app
 
 Backend (Render):
 https://gigflow-backend-b3gk.onrender.com
+User Email: sathish@gmail.com
+Password: 12345
 
 ---
 
