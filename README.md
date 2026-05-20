@@ -93,6 +93,17 @@ GigFlow/
 
 ---
 
+## ▶ Running Project Locally
+
+### Start Backend
+
+```bash
+cd Server
+npm install
+npm run dev
+
+---
+
 ## ⚙️ Installation
 
 ### Clone Repository
